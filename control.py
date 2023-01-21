@@ -1,19 +1,21 @@
 import oppereit as opp
 import view
 import os
+import time
+
 
 def buttun_click():
     type_opp = input("Ввеидет 1 для счета вещественных чисел,\n"
-                  "Или 0 для счета комплексных чисел:\n")
+                     "Или 0 для счета комплексных чисел:\n")
     os.system('cls')
-    if type_opp=="1":
+    if type_opp == "1":
         zeloe()
-    elif type_opp=="0":
+    elif type_opp == "0":
         complexnoe()
     else:
         print("Введено не верное значение")
         buttun_click()
-    
+
 
 def zeloe():
     print("Модуль вещественных чисел")
@@ -39,6 +41,12 @@ def zeloe():
     elif operator == "%":
         result = opp.dif_3()
         view.view_data(result)
+    else:
+        print("Неверное значение!")
+        time.sleep(3)
+        os.system('cls')
+        zeloe()
+
 
 def complexnoe():
     print("Модуль комплексных чисел")
@@ -58,4 +66,8 @@ def complexnoe():
     elif operator == "/":
         result = opp.dif()
         view.view_data(result)
-
+    else:
+        print("Неверное значение!")
+        time.sleep(3)
+        os.system('cls')
+        complexnoe()
